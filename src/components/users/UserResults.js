@@ -1,6 +1,7 @@
 import React from 'react'
 import { useState, useEffect } from 'react'
 import Spinner from '../layout/Spinner'
+import UserItem from './UserItem'
 
 function UserList() {
   const [users, setUsers ] = useState([])
@@ -23,9 +24,9 @@ function UserList() {
   console.log(users)
   if (!isLoading) {
       return (
-        <div className='grid sm:grid-cols-1 gap-8 lg:grid-cols-3'>
+        <div className='grid sm:grid-cols-1 md:grid-cols-2 gap-8 lg:grid-cols-3 xl:grid-cols-4'>
          {users && users.map((user) => (
-              <h3 key={user.login}>{user.login}</h3>
+              <UserItem key={user.id} user={user} />
             ))}
         </div>
       )
