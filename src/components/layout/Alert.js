@@ -3,7 +3,6 @@ import AlertContext from '../../context/alert/AlertContext'
 
 function Alert() {
     const {alert} = useContext(AlertContext)
-    console.log(alert)
 
   return alert !== null && (
     <p className='flex items-start mb-4 space-x-2'>
